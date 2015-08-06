@@ -43,7 +43,7 @@ RUN wget http://git.buildroot.net/buildroot/snapshot/buildroot-2015.05.tar.gz &&
 	cp buildroot-configure-ace/.config buildroot-2015.05/ && \
 	hg clone http://hg.openjdk.java.net/jdk8u/jdk8u openjdk8 && \
 	wget http://www.eu.apache.org/dist/felix/org.apache.felix.main.distribution-5.0.1.tar.gz  && \
-	unzip org.apache.felix.main.distribution-5.0.1.tar.gz
+	tar -xf org.apache.felix.main.distribution-5.0.1.tar.gz
 
 #Create a small base of the future image with buildroot and decompress it
 

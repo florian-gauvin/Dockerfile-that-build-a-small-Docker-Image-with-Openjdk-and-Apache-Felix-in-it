@@ -39,8 +39,8 @@ WORKDIR /usr
 
 RUN wget http://git.buildroot.net/buildroot/snapshot/buildroot-2015.05.tar.gz && \
 	tar -xf buildroot-2015.05.tar.gz && \
-	git clone https://github.com/florian-gauvin/Buildroot-configure.git --branch ace buildroot-configure-ace && \
-	cp buildroot-configure-ace/.config buildroot-2015.05/ && \
+	git clone https://github.com/florian-gauvin/Buildroot-configure.git --branch felix buildroot-configure-felix && \
+	cp buildroot-configure-felix/.config buildroot-2015.05/ && \
 	hg clone http://hg.openjdk.java.net/jdk8u/jdk8u openjdk8 && \
 	wget http://www.eu.apache.org/dist/felix/org.apache.felix.main.distribution-5.0.1.tar.gz  && \
 	tar -xf org.apache.felix.main.distribution-5.0.1.tar.gz

@@ -70,7 +70,7 @@ RUN export LIBFFI_CFLAGS=-I/usr/lib/x86_64-linux-gnu/include && \
 #Copy the built compact 2 profiles of openjdk8 and Apache-Ace in the Base image created with buildroot (We choose compact 2 for our project but you can copy an other compact profiles if you need by replacing "j2re-compact2-image" by "j2re-compact1-image" or "j2re-compact3-image"). Then we have all we need so we can compress all the files.
 
 RUN cp -fr /usr/openjdk8/build/linux-x86_64-normal-zero-release/images/j2re-compact2-image /usr/buildroot-2015.05/output/images/usr/ && \
-	cp -r /usr/felix-framework-5.0.1 /usr/buildroot-2015.05/output/images/ && \
+	cp -r /usr/felix-framework-5.0.1 /usr/buildroot-2015.05/output/images/usr/ && \
 	cd /usr/buildroot-2015.05/output/images/ &&\
 	tar -cf rootfs.tar *
 

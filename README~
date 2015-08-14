@@ -6,9 +6,9 @@ This will create a builder image of Apache Felix
 Then Run the following command : 
 docker run -ti --privileged -v /var/run/docker.sock:/var/run/docker.sock name-of-the-celix-image-builder
 This will launch the builder image of Apache Felix and create automatically the small image with Openjdk8 
-and Apache Felix in it.
+and Apache Felix in it. The image is about 110 MB.
 
-Finally you will have a docker image named inaetics/felix-agent on your host, you can check by running the following command : 
+Finally you will have a docker image named felix.image on your host, you can check by running the following command : 
 "docker images".
 
 BE CAREFUL : 

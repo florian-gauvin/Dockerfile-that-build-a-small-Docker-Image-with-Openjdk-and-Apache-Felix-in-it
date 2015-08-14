@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND noninteractive
 #Download all the packages needed 
 
 RUN apt-get update && apt-get install -y \
+	build-essential \
 	cmake \
 	git \
 	python \
@@ -54,15 +55,8 @@ WORKDIR /usr/buildroot-2015.05/output/images
 
 RUN tar -xf rootfs.tar &&\
 	rm rootfs.tar
-
-#Install etcd	
-RUN cd /tmp \
-	&& export ETCDVERSION=v2.0.13 \
-	&& curl -k -L https://github.com/coreos/etcd/releases/download/$ETCDVERSION/etcd-$ETCDVERSION-linux-amd64.tar.gz | gunzip | tar xf - \
-	&& cp etcd-$ETCDVERSION-linux-amd64/etcdctl /usr/buildroot-2015.05/output/images/bin/
-
+	
 #Add the resources
-
 ADD resources /usr/buildroot-2015.05/output/images/tmp
 
 #Compile the 3 compact profiles of Openjdk8, for more information about the compact profiles of openjdk8 see this link : http://openjdk.java.net/jeps/161

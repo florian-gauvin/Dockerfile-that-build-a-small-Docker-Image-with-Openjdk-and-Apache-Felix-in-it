@@ -1,4 +1,5 @@
-Here you can find a Dockerfile that can create a small docker image with Openjdk8 Apache Felix.
+Here you can find a Dockerfile that can create a small docker image with Openjdk8 Apache Felix. This Dockerfile is useful for this INAETICS project.
+
 To use this dockerfile :
 First, build the dockerfile by running the following command : docker build -t "name-of-the-felix-image-builder" .
 This will create a builder image of Apache Felix
@@ -6,17 +7,15 @@ This will create a builder image of Apache Felix
 Then Run the following command : 
 docker run -ti --privileged -v /var/run/docker.sock:/var/run/docker.sock name-of-the-celix-image-builder
 This will launch the builder image of Apache Felix and create automatically the small image with Openjdk8 
-and Apache Felix in it. The image is about 110 MB.
+and Apache Felix in it.
 
-Finally you will have a docker image named felix.image on your host, you can check by running the following command : 
+Finally you will have a docker image named inaetics/felix-agent on your host, you can check by running the following command : 
 "docker images".
 
 BE CAREFUL : 
 	-You need to have the same docker version than there is in the image, in the image I'm
 using the latest version of docker by running the following command : wget -qO- https://get.docker.com/ | sh
-	-In this dockerfile I'm building the 3 compact profiles of openjdk8 but I'm using only the compact profiles 2. 
-You can change of compact profile by replacing "j2re-compact2-image" by "j2re-compact1-image" or "j2re-compact3-image" 
-in the Dockerfile. For more information about the compact profiles, see this link : http://openjdk.java.net/jeps/161
+	-In this dockerfile I'm building the complete java runtime environment otherwise the image can not be integrated to the INAETICS project.
 	-The configuration file of Buildroot is dependent of the version of buildroot your using. 
 If you want to change Buildroot version you have to create a new configuration file with the new Buildroot. 
 Put it into a git reposirtory, and change the git repository in the Dockerfile. 

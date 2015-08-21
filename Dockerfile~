@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
 	language-pack-en \
 	mercurial \
 	zip \
+	curl \
 	openjdk-7-jdk \
 	libcups2-dev \
 	libfreetype6-dev \
